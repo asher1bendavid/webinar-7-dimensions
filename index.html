@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 ממדי ה-AI | וובינר חינם | Paretix Academy</title>
+  <meta name="description" content="וובינר חינם: 7 ממדי ה-AI שכל אנליסט ומנהל חייב לשלוט בהם | 18 יוני 2026 | 18:00 GMT+3" />
+  <meta property="og:title" content="7 ממדי ה-AI | וובינר חינם | Paretix Academy" />
+  <meta property="og:description" content="שמור על רלוונטיות מקצועית. הצטרף לוובינר החינמי ולמד את 7 הממדים שמפרידים בין מקצועני AI מהמובילים לנשארים מאחור." />
+  <meta property="og:url" content="https://7dimentionswebinar.paretix.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0a192f;
+      --navy-dark:   #061220;
+      --navy-light:  #0d2137;
+      --gold:        #c5a059;
+      --gold-dark:   #a8863c;
+      --gold-light:  #d4b577;
+      --text:        #ccd6f6;
+      --muted:       #8892a4;
+      --white:       #ffffff;
+      --card-bg:     rgba(13, 33, 55, 0.6);
+      --card-border: rgba(197, 160, 89, 0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body.lang-en {
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      direction: ltr;
+    }
+
+    ::selection { background: rgba(197,160,89,0.25); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(6, 18, 32, 0.92);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(197,160,89,0.12);
+      height: 96px;
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; height: 100%;
+      padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    nav img.logo { height: 80px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .lang-btn {
+      background: rgba(197,160,89,0.08); border: 1px solid rgba(197,160,89,0.35);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      padding: 0.375rem 0.875rem; border-radius: 5px; cursor: pointer;
+      transition: background 0.2s; font-family: inherit;
+    }
+    .lang-btn:hover { background: rgba(197,160,89,0.16); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy-dark); font-size: 0.8125rem; font-weight: 800;
+      letter-spacing: 0.05em; padding: 0.5rem 1.25rem; border-radius: 6px;
+      border: none; cursor: pointer; text-decoration: none; display: inline-block;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 100vh;
+      padding: 9rem 1.5rem 6rem; display: flex; align-items: center; overflow: hidden;
+      background: var(--navy-dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 70%, rgba(197,160,89,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(197,160,89,0.05) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(197,160,89,0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2; max-width: 820px; margin: 0 auto; text-align: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(197,160,89,0.12); border: 1px solid rgba(197,160,89,0.35);
+      color: var(--gold); font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.375rem 1rem; border-radius: 30px; margin-bottom: 2rem;
+    }
+    .badge-dot {
+      width: 7px; height: 7px; background: var(--gold); border-radius: 50%;
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.5; transform:scale(0.75); }
+    }
+    h1.hero-title {
+      font-size: clamp(2.25rem, 5.5vw, 3.75rem); font-weight: 900; line-height: 1.15;
+      color: var(--white); margin-bottom: 1.25rem; letter-spacing: -0.02em;
+    }
+    h1.hero-title .gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.1875rem); color: var(--text); line-height: 1.7;
+      max-width: 620px; margin: 0 auto 2rem; font-weight: 400;
+    }
+    .hero-meta {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .meta-chip {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: rgba(13,33,55,0.7); border: 1px solid rgba(197,160,89,0.2);
+      color: var(--text); font-size: 0.875rem; font-weight: 500;
+      padding: 0.5rem 1.1rem; border-radius: 30px; margin: 0.3rem 0.4rem;
+    }
+    .meta-chip svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ─── COUNTDOWN ─── */
+    .countdown {
+      display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2.75rem; flex-wrap: wrap;
+      /* Always LTR so days are on the left and seconds on the right */
+      direction: ltr; unicode-bidi: isolate;
+    }
+    .cd-unit { display: flex; flex-direction: column; align-items: center; min-width: 76px; }
+    .cd-number {
+      background: rgba(13,33,55,0.8); border: 1px solid rgba(197,160,89,0.3);
+      border-radius: 10px; width: 76px; height: 76px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 800; color: var(--gold);
+      font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+      box-shadow: 0 4px 20px rgba(197,160,89,0.08);
+    }
+    .cd-label {
+      font-size: 0.65rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem;
+    }
+    .cd-sep {
+      font-size: 1.75rem; font-weight: 800; color: rgba(197,160,89,0.3);
+      align-self: flex-start; padding-top: 0.9rem; line-height: 1;
+    }
+
+    /* ─── BUTTONS ─── */
+    .cta-group {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy-dark); font-size: 1rem; font-weight: 800;
+      letter-spacing: 0.04em; padding: 0.95rem 2.25rem; border-radius: 8px;
+      border: none; cursor: pointer; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(197,160,89,0.35); opacity: 0.95; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--text); font-size: 0.9rem; font-weight: 600;
+      padding: 0.9rem 1.75rem; border-radius: 8px; border: 1px solid rgba(204,214,246,0.25);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(204,214,246,0.5); background: rgba(204,214,246,0.05); transform: translateY(-1px); }
+    .hero-note { font-size: 0.8rem; color: var(--muted); }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: rgba(6,18,32,0.8);
+      border-top: 1px solid rgba(197,160,89,0.12);
+      border-bottom: 1px solid rgba(197,160,89,0.12);
+      padding: 1.5rem;
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 0.5rem 1rem;
+      border-inline-end: 1px solid rgba(197,160,89,0.15);
+    }
+    .stat-item:last-child { border-inline-end: none; }
+    .stat-value { font-size: 1.875rem; font-weight: 900; color: var(--gold); line-height: 1.2; }
+    .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; letter-spacing: 0.05em; }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    h2.section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;
+      color: var(--white); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1.0625rem; color: var(--text); line-height: 1.7;
+      max-width: 600px; margin-bottom: 3rem;
+    }
+    .divider-gold {
+      width: 52px; height: 3px; border-radius: 2px; margin-bottom: 1.5rem;
+    }
+
+    /* ─── WHO IS THIS FOR ─── */
+    #for-who { background: var(--navy); }
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .audience-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 1.5rem 1.25rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .audience-card:hover { border-color: rgba(197,160,89,0.35); transform: translateY(-2px); }
+    .aud-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .aud-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .aud-desc { font-size: 0.8375rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── BENEFITS ─── */
+    #benefits { background: var(--navy-dark); }
+    .benefits-list {
+      list-style: none;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2.5rem;
+    }
+    .benefit-item {
+      display: flex; align-items: flex-start; gap: 0.875rem;
+      padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px;
+    }
+    .benefit-check {
+      width: 22px; height: 22px; flex-shrink: 0; margin-top: 0.1rem;
+      background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.35);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #22c55e; font-size: 0.75rem;
+    }
+    .benefit-text { font-size: 0.9375rem; color: var(--text); line-height: 1.55; }
+
+    /* ─── REGISTRATION ─── */
+    #register { background: var(--navy); padding: 5rem 1.5rem; }
+    .register-inner { max-width: 560px; margin: 0 auto; }
+    .register-header { text-align: center; margin-bottom: 2rem; }
+    .register-card {
+      background: rgba(10,25,47,0.9); border: 1px solid rgba(197,160,89,0.25);
+      border-radius: 20px; padding: 2.75rem 2.25rem;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(197,160,89,0.05);
+    }
+    .register-card h3 { font-size: 1.625rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+    .register-sub { font-size: 0.9375rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
+
+    /* English-only language notice in form */
+    .lang-notice {
+      background: rgba(197,160,89,0.07); border: 1px solid rgba(197,160,89,0.2);
+      border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.5rem;
+    }
+    .lang-notice-title {
+      font-size: 0.875rem; font-weight: 700; color: var(--gold); margin-bottom: 0.7rem;
+    }
+    .checkbox-row {
+      display: flex; align-items: flex-start; gap: 0.6rem; cursor: pointer;
+      font-size: 0.875rem; color: var(--text); line-height: 1.5;
+    }
+    .checkbox-row input[type="checkbox"] {
+      width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.15rem;
+      accent-color: var(--gold); cursor: pointer;
+    }
+
+    .form-row { margin-bottom: 1.1rem; }
+    label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text); margin-bottom: 0.45rem; }
+    input[type="text"], input[type="email"], select {
+      width: 100%; background: rgba(13,33,55,0.85); border: 1px solid rgba(197,160,89,0.25);
+      border-radius: 8px; padding: 0.8rem 1rem; color: var(--white);
+      font-size: 0.9375rem; font-family: inherit; outline: none;
+      appearance: none; -webkit-appearance: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(197,160,89,0.12); }
+    input::placeholder { color: var(--muted); }
+    select option { background: #0d2137; color: var(--white); }
+    .btn-submit {
+      width: 100%; background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy-dark); font-size: 1.0625rem; font-weight: 800;
+      letter-spacing: 0.04em; padding: 1rem; border-radius: 8px; border: none;
+      cursor: pointer; margin-top: 1.5rem;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(197,160,89,0.3); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .form-note { text-align: center; font-size: 0.775rem; color: var(--muted); margin-top: 1rem; line-height: 1.5; }
+
+    .success-state { display: none; text-align: center; padding: 1.5rem 0; }
+    .success-icon {
+      width: 64px; height: 64px; background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem; font-size: 1.75rem;
+    }
+    .success-title { font-size: 1.375rem; font-weight: 800; color: var(--white); margin-bottom: 0.75rem; }
+    .success-desc { font-size: 0.9375rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--navy-dark); border-top: 1px solid rgba(197,160,89,0.08); }
+    .about-inner { max-width: 740px; margin: 0 auto; text-align: center; }
+    .about-logo { height: 88px; width: auto; margin: 0 auto 1.5rem; display: block; }
+    .about-text { font-size: 1.025rem; color: var(--text); line-height: 1.75; margin-bottom: 1.25rem; }
+    .about-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn-sm {
+      display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600;
+      padding: 0.6rem 1.25rem; border-radius: 8px; border: 1px solid rgba(204,214,246,0.25);
+      color: var(--text); text-decoration: none; background: transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-sm:hover { border-color: rgba(204,214,246,0.45); background: rgba(204,214,246,0.05); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-dark); border-top: 1px solid rgba(197,160,89,0.1);
+      padding: 1.75rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8125rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8125rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── FLOATING CTA ─── */
+    .floating-cta {
+      position: fixed; bottom: 1.5rem; inset-inline-end: 1.5rem; z-index: 90;
+      opacity: 0; transform: translateY(16px); pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .floating-btn {
+      display: flex; align-items: center; gap: 0.6rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy-dark); font-size: 0.9rem; font-weight: 800;
+      padding: 0.8rem 1.5rem; border-radius: 50px;
+      box-shadow: 0 8px 30px rgba(197,160,89,0.4); text-decoration: none;
+      animation: float-pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes float-pulse {
+      0%,100% { box-shadow: 0 8px 30px rgba(197,160,89,0.35); }
+      50%      { box-shadow: 0 8px 42px rgba(197,160,89,0.55); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .hero { padding: 7.5rem 1.25rem 4rem; }
+      .cd-number { width: 64px; height: 64px; font-size: 1.625rem; }
+      .cd-unit { min-width: 64px; }
+      .register-card { padding: 2rem 1.25rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .nav-cta { display: none; }
+      nav { height: 80px; }
+      nav img.logo { height: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://academy.paretix.com" target="_blank" rel="noopener">
+      <img class="logo" src="https://paretix-ai-assessment.vercel.app/images/logo.png" alt="Paretix Academy" />
+    </a>
+    <div class="nav-right">
+      <button class="lang-btn" onclick="toggleLang()" id="lang-btn">EN</button>
+      <a class="nav-cta" href="#register" id="nav-cta-text">הרשמה חינם</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      <span id="badge-text">וובינר חינם · 18 יוני 2026</span>
+    </div>
+
+    <h1 class="hero-title" id="hero-title">
+      7 ממדי ה-AI שכל<br/>
+      <span class="gold">אנליסט ומנהל</span><br/>
+      חייב לשלוט בהם היום
+    </h1>
+
+    <p class="hero-sub" id="hero-sub">
+      שמור על רלוונטיות מקצועית בעידן ה-AI. בוובינר חינמי זה תלמד אילו 7 כישורי ליבה מפרידים בין אנשי המקצוע שמובילים לבין אלו שנשארים מאחור, ומה צריך לעשות עכשיו.
+    </p>
+
+    <div class="hero-meta">
+      <div class="meta-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span id="chip-date">יום רביעי, 18 יוני 2026</span>
+      </div>
+      <div class="meta-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span id="chip-time">18:00 GMT+3</span>
+      </div>
+      <div class="meta-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <span id="chip-duration">60 דקות</span>
+      </div>
+      <div class="meta-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <span id="chip-live">שידור חי · עם Q&amp;A</span>
+      </div>
+    </div>
+
+    <!-- Countdown: always LTR, days on left, seconds on right -->
+    <div class="countdown">
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-days">--</div>
+        <div class="cd-label" id="cd-label-days">ימים</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-hours">--</div>
+        <div class="cd-label" id="cd-label-hours">שעות</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-mins">--</div>
+        <div class="cd-label" id="cd-label-mins">דקות</div>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit">
+        <div class="cd-number" id="cd-secs">--</div>
+        <div class="cd-label" id="cd-label-secs">שניות</div>
+      </div>
+    </div>
+
+    <div class="cta-group" id="hero-cta-group">
+      <a class="btn-primary" href="#register" id="btn-hero-register">הרשמה חינם ←</a>
+      <a class="btn-outline" href="#" onclick="openCalendar(event)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span id="btn-cal-text">שמור ביומן</span>
+      </a>
+    </div>
+
+    <p class="hero-note" id="hero-note">ההשתתפות חינמית לחלוטין · מקומות מוגבלים</p>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═════════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-value">100%</span>
+      <span class="stat-label" id="stat-free">חינמי</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">60</span>
+      <span class="stat-label" id="stat-min">דקות שידור חי</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">Q&amp;A</span>
+      <span class="stat-label" id="stat-qa">חי עם המרצה</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WHO IS THIS FOR ════════════════════════════════════════════════════ -->
+<section id="for-who">
+  <div class="container">
+    <p class="section-label" id="sec-label-for">למי מיועד</p>
+    <div class="divider-gold" id="divider-for" style="background:linear-gradient(90deg,var(--gold),transparent)"></div>
+    <h2 class="section-title" id="sec-title-for">הוובינר הזה בשבילך אם...</h2>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="aud-icon">📈</div>
+        <div>
+          <div class="aud-title" id="aud1-title">אנליסטים ואנשי דאטה</div>
+          <div class="aud-desc" id="aud1-desc">רוצים לשמור על יתרון תחרותי ולהיות הראשונים לאמץ כלי AI יעילים בתחום.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="aud-icon">👔</div>
+        <div>
+          <div class="aud-title" id="aud2-title">מנהלים ומנהלי צוותים</div>
+          <div class="aud-desc" id="aud2-desc">מחפשים להוביל צוותים אפקטיביים בעידן AI ולקבל החלטות מבוססות על הבנה אמיתית.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="aud-icon">🎓</div>
+        <div>
+          <div class="aud-title" id="aud3-title">אנשי מקצוע בצמיחה</div>
+          <div class="aud-desc" id="aud3-desc">יודעים שה-AI משנה את הענף שלהם ורוצים מפת דרכים ברורה לפיתוח מיומנויות.</div>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="aud-icon">🏢</div>
+        <div>
+          <div class="aud-title" id="aud4-title">מנהלי הדרכה וL&amp;D</div>
+          <div class="aud-desc" id="aud4-desc">שואלים איך לבנות תוכניות AI-literacy ארגוניות שמייצרות ערע מהיר ומדיד.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ══════════════════════════════════════════════════════════ -->
+<section id="benefits">
+  <div class="container">
+    <p class="section-label" id="sec-label-ben">מה תקבל</p>
+    <div class="divider-gold" id="divider-ben" style="background:linear-gradient(90deg,var(--gold),transparent)"></div>
+    <h2 class="section-title" id="sec-title-ben">מה תיקח מהוובינר</h2>
+    <ul class="benefits-list">
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben1">מפת הממדים המלאה: הבנה ברורה של 7 תחומי ה-AI שכל מקצוען חייב לדעת</div></li>
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben2">כלים מעשיים להערכת הרמה הנוכחית שלך בכל ממד</div></li>
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben3">צעדים מוחשיים לשיפור מיידי, שניתן ליישם כבר למחרת</div></li>
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben4">הבנה של הפער בין משתמש ב-AI לבין שולט ב-AI. איך לגשר עליו בפועל.</div></li>
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben5">תשובות לשאלות שלך בפרק Q&amp;A חי עם המרצה</div></li>
+      <li class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text" id="ben6">הצצה לקורס הכולל עם הנחה מיוחדת למשתתפי הוובינר</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ REGISTRATION ═══════════════════════════════════════════════════════ -->
+<section id="register">
+  <div class="register-inner">
+    <div class="register-header">
+      <p class="section-label" id="sec-label-reg" style="display:flex;justify-content:center;">הרשמה לוובינר</p>
+      <div class="divider-gold" id="divider-reg" style="background:linear-gradient(90deg,var(--gold),transparent);margin:0.75rem auto 1rem;"></div>
+      <h2 class="section-title" id="sec-title-reg" style="text-align:center;">הבטח את מקומך, חינם</h2>
+    </div>
+
+    <div class="register-card">
+      <div id="form-container">
+        <h3 id="reg-card-title">18 יוני 2026 · 18:00 GMT+3</h3>
+        <p class="register-sub" id="reg-card-sub">מלא את הפרטים ונשלח לך את קישור הכניסה לשידור החי לפני הוובינר.</p>
+
+        <!-- Hebrew-only notice: shown when lang = he -->
+        <div id="hebrew-notice">
+          <div class="lang-notice">
+            <label class="checkbox-row">
+              <input type="checkbox" id="notify-other-dates" name="notify_other_dates" />
+              <span id="notify-dates-label">הודיעו לי כשיהיו תאריכים נוספים</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- English-only notice: shown when lang = en -->
+        <div id="english-notice" style="display:none">
+          <div class="lang-notice">
+            <div class="lang-notice-title" id="notice-title">This webinar will be conducted in Hebrew.</div>
+            <label class="checkbox-row">
+              <input type="checkbox" id="notify-english" name="notify_english" />
+              <span id="notify-label">Notify me when an English webinar is scheduled</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Replace action with real endpoint: POST { name, email, role, notifyEnglish, lang } -->
+        <form id="register-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <label for="f-name" id="label-name">שם מלא</label>
+            <input type="text" id="f-name" name="name" required placeholder="ישראל ישראלי" />
+          </div>
+          <div class="form-row">
+            <label for="f-email" id="label-email">אימייל</label>
+            <input type="email" id="f-email" name="email" required placeholder="you@company.com" />
+          </div>
+          <div class="form-row">
+            <label for="f-role" id="label-role">תפקיד (אופציונלי)</label>
+            <select id="f-role" name="role">
+              <option value="">בחר תפקיד...</option>
+              <option value="analyst">אנליסט / דאטה</option>
+              <option value="manager">מנהל / Team Lead</option>
+              <option value="ld">L&amp;D / הדרכה</option>
+              <option value="executive">מנהל בכיר / C-Level</option>
+              <option value="other">אחר</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit" id="submit-btn">הרשם לוובינר חינם ←</button>
+        <div id="submit-error" style="display:none;margin-top:0.75rem;padding:0.7rem 1rem;
+             background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
+             border-radius:8px;font-size:0.85rem;color:#fca5a5;text-align:center;line-height:1.5;">
+        </div>
+        </form>
+        <p class="form-note" id="form-note">ה-AI לא יחכה. 2 דקות עכשיו = ידע שישרת אותך שנים. לא שולחים ספאם.</p>
+      </div>
+
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <div class="success-title" id="success-title">נרשמת בהצלחה!</div>
+        <div class="success-desc" id="success-desc">
+          שלחנו לך אימייל אישור. קישור הצטרפות לשידור החי ישלח אליך לפני הוובינר.<br/><br/>
+          נתראה ב-18 יוני ב-18:00 🎯
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-inner">
+    <img class="about-logo" src="https://paretix-ai-assessment.vercel.app/images/logo.png" alt="Paretix Academy" />
+    <p class="about-text" id="about-text">
+      <strong style="color:var(--white);">Paretix Academy</strong> היא אקדמיה מקצועית המתמחה בהכשרת אנליסטים ומנהלים לעידן ה-AI. הקורסים שלנו מבוססים על מחקר, מוכווני יישום ומדידים. תוכלו לראות תוצאות בעבודה היומיומית שלכם.
+    </p>
+    <div class="about-links">
+      <a href="https://academy.paretix.com" target="_blank" rel="noopener" class="btn-sm" id="about-link1">← לאקדמיה</a>
+      <a href="https://paretix-ai-assessment.vercel.app" target="_blank" rel="noopener" class="btn-sm" id="about-link2">← בדוק את רמת ה-AI שלך</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy" id="footer-copy">Paretix Academy © 2026</span>
+    <div class="footer-links">
+      <a href="https://academy.paretix.com" target="_blank" rel="noopener">Paretix Academy</a>
+      <a href="/privacy" id="footer-privacy">מדיניות פרטיות</a>
+      <a href="/terms" id="footer-terms">תנאי שימוש</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING CTA ══════════════════════════════════════════════════════ -->
+<div class="floating-cta" id="floating-cta">
+  <a class="floating-btn" href="#register" id="float-btn-text">הרשמה חינם ←</a>
+</div>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════════════════════ -->
+<script>
+  // ─── COPY DICTIONARY ────────────────────────────────────────────────
+  const COPY = {
+    he: {
+      lang: 'he', dir: 'rtl',
+      title: '7 ממדי ה-AI | וובינר חינם | Paretix Academy',
+      langBtn: 'EN',
+      navCta: 'הרשמה חינם',
+      badgeText: 'וובינר חינם · 18 יוני 2026',
+      heroTitle: '7 ממדי ה-AI שכל<br/><span class="gold">אנליסט ומנהל</span><br/>חייב לשלוט בהם היום',
+      heroSub: 'שמור על רלוונטיות מקצועית בעידן ה-AI. בוובינר חינמי זה תלמד אילו 7 כישורי ליבה מפרידים בין אנשי המקצוע שמובילים לבין אלו שנשארים מאחור, ומה צריך לעשות עכשיו.',
+      chipDate: 'יום רביעי, 18 יוני 2026',
+      chipTime: '18:00 GMT+3',
+      chipDuration: '60 דקות',
+      chipLive: 'שידור חי · עם Q&A',
+      cdDays: 'ימים', cdHours: 'שעות', cdMins: 'דקות', cdSecs: 'שניות',
+      btnRegister: 'הרשמה חינם ←',
+      btnCal: 'שמור ביומן',
+      heroNote: 'ההשתתפות חינמית לחלוטין · מקומות מוגבלים',
+      statFree: 'חינמי', statMin: 'דקות שידור חי', statQa: 'חי עם המרצה',
+      secLabelFor: 'למי מיועד', secTitleFor: 'הוובינר הזה בשבילך אם...',
+      audiences: [
+        { title: 'אנליסטים ואנשי דאטה', desc: 'רוצים לשמור על יתרון תחרותי ולהיות הראשונים לאמץ כלי AI יעילים בתחום.' },
+        { title: 'מנהלים ומנהלי צוותים', desc: 'מחפשים להוביל צוותים אפקטיביים בעידן AI ולקבל החלטות מבוססות על הבנה אמיתית.' },
+        { title: 'אנשי מקצוע בצמיחה', desc: 'יודעים שה-AI משנה את הענף שלהם ורוצים מפת דרכים ברורה לפיתוח מיומנויות.' },
+        { title: 'מנהלי הדרכה וL&amp;D', desc: 'שואלים איך לבנות תוכניות AI-literacy ארגוניות שמייצרות ערך מהיר ומדיד.' },
+      ],
+      secLabelBen: 'מה תקבל', secTitleBen: 'מה תיקח מהוובינר',
+      benefits: [
+        'מפת הממדים המלאה: הבנה ברורה של 7 תחומי ה-AI שכל מקצוען חייב לדעת',
+        'כלים מעשיים להערכת הרמה הנוכחית שלך בכל ממד',
+        'צעדים מוחשיים לשיפור מיידי, שניתן ליישם כבר למחרת',
+        'הבנה של הפער בין משתמש ב-AI לבין שולט ב-AI. איך לגשר עליו בפועל.',
+        'תשובות לשאלות שלך בפרק Q&A חי עם המרצה',
+        'הצצה לקורס הכולל עם הנחה מיוחדת למשתתפי הוובינר',
+      ],
+      secLabelReg: 'הרשמה לוובינר', secTitleReg: 'הבטח את מקומך, חינם',
+      regCardTitle: '18 יוני 2026 · 18:00 GMT+3',
+      regCardSub: 'מלא את הפרטים ונשלח לך את קישור הכניסה לשידור החי לפני הוובינר.',
+      labelName: 'שם מלא', labelEmail: 'אימייל', labelRole: 'תפקיד (אופציונלי)',
+      roleOptions: ['בחר תפקיד...','אנליסט / דאטה','מנהל / Team Lead','L&D / הדרכה','מנהל בכיר / C-Level','אחר'],
+      submitBtn: 'הרשם לוובינר חינם ←', submitBtnLoading: 'שולח...',
+      formNote: 'ה-AI לא יחכה. 2 דקות עכשיו = ידע שישרת אותך שנים. לא שולחים ספאם.',
+      successTitle: 'נרשמת בהצלחה!',
+      successDesc: 'שלחנו לך אימייל אישור. קישור הצטרפות לשידור החי ישלח אליך לפני הוובינר.<br/><br/>נתראה ב-18 יוני ב-18:00 🎯',
+      aboutText: '<strong style="color:var(--white);">Paretix Academy</strong> היא אקדמיה מקצועית המתמחה בהכשרת אנליסטים ומנהלים לעידן ה-AI. הקורסים שלנו מבוססים על מחקר, מוכווני יישום ומדידים. תוכלו לראות תוצאות בעבודה היומיומית שלכם.',
+      aboutLink1: '← לאקדמיה', aboutLink2: '← בדוק את רמת ה-AI שלך',
+      footerCopy: 'Paretix Academy © 2026',
+      footerPrivacy: 'מדיניות פרטיות', footerTerms: 'תנאי שימוש',
+      floatBtn: 'הרשמה חינם ←',
+      dividerDir: '90deg',
+      placeholder: { name: 'ישראל ישראלי' },
+      calTitle: '7 ממדי ה-AI | וובינר חינם | Paretix Academy',
+      calDetails: 'וובינר חינמי: 7 ממדי ה-AI שכל אנליסט ומנהל חייב לשלוט בהם | Paretix Academy',
+      showEnglishNotice: false,
+      showHebrewNotice: true,
+      notifyDatesText: 'הודיעו לי כשיהיו תאריכים נוספים',
+    },
+    en: {
+      lang: 'en', dir: 'ltr',
+      title: '7 AI Dimensions | Free Webinar | Paretix Academy',
+      langBtn: 'עב',
+      navCta: 'Register Free',
+      badgeText: 'FREE WEBINAR · JUNE 18, 2026',
+      heroTitle: 'The 7 AI Dimensions Every<br/><span class="gold">Analyst &amp; Manager</span><br/>Must Master Today',
+      heroSub: 'Stay professionally relevant in the AI era. In this free live session, discover the 7 core competencies separating leaders from those falling behind, plus the concrete steps you can take immediately.',
+      chipDate: 'Wednesday, June 18, 2026',
+      chipTime: '18:00 GMT+3',
+      chipDuration: '60 Minutes',
+      chipLive: 'Live Stream · With Q&A',
+      cdDays: 'Days', cdHours: 'Hours', cdMins: 'Mins', cdSecs: 'Secs',
+      btnRegister: 'Register Free →',
+      btnCal: 'Add to Calendar',
+      heroNote: 'Completely free · Limited spots available',
+      statFree: 'Free', statMin: 'Minute Live Session', statQa: 'Live with the Speaker',
+      secLabelFor: 'WHO IS THIS FOR', secTitleFor: 'This webinar is for you if...',
+      audiences: [
+        { title: 'Analysts &amp; Data Professionals', desc: 'Want to maintain a competitive edge and be first to adopt effective AI tools in the field.' },
+        { title: 'Managers &amp; Team Leaders', desc: 'Looking to lead effective teams in the AI era and make decisions based on genuine understanding.' },
+        { title: 'Growth-Minded Professionals', desc: 'Know AI is reshaping their field and want a clear roadmap for building the right skills.' },
+        { title: 'L&amp;D &amp; Training Managers', desc: 'Asking how to build organizational AI-literacy programs that deliver fast, measurable value.' },
+      ],
+      secLabelBen: 'WHAT YOU\'LL GET', secTitleBen: 'What You\'ll Take Away',
+      benefits: [
+        'The full dimensions map: a clear understanding of the 7 AI domains every professional must know',
+        'Practical tools to assess your current level in each dimension',
+        'Concrete next steps for immediate improvement, applicable starting the next day',
+        'Understanding the gap between using AI and mastering AI. How to bridge it in practice.',
+        'Answers to your questions in a live Q&A session with the speaker',
+        'Preview of the full course with an exclusive webinar-attendee discount',
+      ],
+      secLabelReg: 'WEBINAR REGISTRATION', secTitleReg: 'Secure Your Free Spot',
+      regCardTitle: 'June 18, 2026 · 18:00 GMT+3',
+      regCardSub: 'Fill in your details and we\'ll send you the live stream link before the webinar.',
+      labelName: 'Full Name', labelEmail: 'Email Address', labelRole: 'Job Role (optional)',
+      roleOptions: ['Select your role...','Analyst / Data','Manager / Team Lead','L&D / Training','Senior Executive / C-Level','Other'],
+      submitBtn: 'Register for Free Webinar →', submitBtnLoading: 'Sending...',
+      formNote: 'AI won\'t wait. 2 minutes now = knowledge that serves you for years. No spam, ever.',
+      noticeTitleText: 'This webinar will be conducted in Hebrew.',
+      notifyLabelText: 'Notify me when an English webinar is scheduled',
+      successTitle: 'You\'re registered!',
+      successDesc: 'We\'ve sent you a confirmation email. Your live stream link will arrive before the webinar.<br/><br/>See you on June 18th at 18:00 GMT+3 🎯',
+      aboutText: '<strong style="color:var(--white);">Paretix Academy</strong> is a professional academy specializing in training analysts and managers for the AI era. Our courses are research-based, application-oriented and measurable. You\'ll see real results in your daily work.',
+      aboutLink1: 'Visit Academy →', aboutLink2: 'Check Your AI Literacy →',
+      footerCopy: 'Paretix Academy © 2026',
+      footerPrivacy: 'Privacy Policy', footerTerms: 'Terms of Use',
+      floatBtn: 'Register Free →',
+      dividerDir: '270deg',
+      placeholder: { name: 'Jane Smith' },
+      calTitle: '7 AI Dimensions | Free Webinar | Paretix Academy',
+      calDetails: 'Free webinar: The 7 AI Dimensions every analyst and manager must master | Paretix Academy',
+      showEnglishNotice: true,
+      showHebrewNotice: false,
+    }
+  };
+
+  // ─── STATE ──────────────────────────────────────────────────────────
+  let currentLang = 'he';
+
+  // ─── APPLY LANGUAGE ─────────────────────────────────────────────────
+  function applyLang(lang) {
+    currentLang = lang;
+    const c = COPY[lang];
+    const html = document.documentElement;
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', c.dir);
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.title = c.title;
+
+    const dg = `linear-gradient(${c.dividerDir},var(--gold),transparent)`;
+
+    function set(id, html)    { const el = document.getElementById(id); if (el) el.innerHTML = html; }
+    function txt(id, t)       { const el = document.getElementById(id); if (el) el.textContent = t; }
+    function bg(id, v)        { const el = document.getElementById(id); if (el) el.style.background = v; }
+
+    // Navbar
+    txt('lang-btn', c.langBtn);
+    txt('nav-cta-text', c.navCta);
+
+    // Hero
+    txt('badge-text', c.badgeText);
+    set('hero-title', c.heroTitle);
+    txt('hero-sub', c.heroSub);
+    txt('chip-date', c.chipDate);
+    txt('chip-time', c.chipTime);
+    txt('chip-duration', c.chipDuration);
+    txt('chip-live', c.chipLive);
+    txt('cd-label-days', c.cdDays);
+    txt('cd-label-hours', c.cdHours);
+    txt('cd-label-mins', c.cdMins);
+    txt('cd-label-secs', c.cdSecs);
+    txt('btn-hero-register', c.btnRegister);
+    txt('btn-cal-text', c.btnCal);
+    txt('hero-note', c.heroNote);
+    txt('float-btn-text', c.floatBtn);
+
+    // Stats
+    txt('stat-free', c.statFree);
+    txt('stat-min', c.statMin);
+    txt('stat-qa', c.statQa);
+
+    // Who for
+    txt('sec-label-for', c.secLabelFor);
+    bg('divider-for', dg);
+    set('sec-title-for', c.secTitleFor);
+    c.audiences.forEach((a, i) => {
+      set(`aud${i+1}-title`, a.title);
+      txt(`aud${i+1}-desc`, a.desc);
+    });
+
+    // Benefits
+    txt('sec-label-ben', c.secLabelBen);
+    bg('divider-ben', dg);
+    txt('sec-title-ben', c.secTitleBen);
+    c.benefits.forEach((b, i) => { txt(`ben${i+1}`, b); });
+
+    // Registration
+    txt('sec-label-reg', c.secLabelReg);
+    bg('divider-reg', dg);
+    txt('sec-title-reg', c.secTitleReg);
+    txt('reg-card-title', c.regCardTitle);
+    txt('reg-card-sub', c.regCardSub);
+    txt('label-name', c.labelName);
+    txt('label-email', c.labelEmail);
+    txt('label-role', c.labelRole);
+    const sel = document.getElementById('f-role');
+    if (sel) Array.from(sel.options).forEach((opt, i) => { if (c.roleOptions[i]) opt.text = c.roleOptions[i]; });
+    document.getElementById('f-name').placeholder = c.placeholder.name;
+    const btn = document.getElementById('submit-btn');
+    if (btn && !btn.disabled) btn.textContent = c.submitBtn;
+    txt('form-note', c.formNote);
+
+    // Hebrew notice (shown only in Hebrew)
+    const hebrewNotice = document.getElementById('hebrew-notice');
+    if (hebrewNotice) hebrewNotice.style.display = c.showHebrewNotice ? 'block' : 'none';
+    if (c.showHebrewNotice) {
+      txt('notify-dates-label', c.notifyDatesText);
+    }
+
+    // English notice (shown only in English)
+    const notice = document.getElementById('english-notice');
+    if (notice) notice.style.display = c.showEnglishNotice ? 'block' : 'none';
+    if (c.showEnglishNotice) {
+      txt('notice-title', c.noticeTitleText);
+      txt('notify-label', c.notifyLabelText);
+    }
+
+    // Success
+    txt('success-title', c.successTitle);
+    set('success-desc', c.successDesc);
+
+    // About
+    set('about-text', c.aboutText);
+    txt('about-link1', c.aboutLink1);
+    txt('about-link2', c.aboutLink2);
+
+    // Footer
+    txt('footer-copy', c.footerCopy);
+    txt('footer-privacy', c.footerPrivacy);
+    txt('footer-terms', c.footerTerms);
+  }
+
+  function toggleLang() {
+    applyLang(currentLang === 'he' ? 'en' : 'he');
+  }
+
+  // ─── COUNTDOWN ──────────────────────────────────────────────────────
+  // June 18, 2026 18:00 GMT+3 = 15:00 UTC
+  const TARGET = new Date('2026-06-18T15:00:00Z');
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+  function tick() {
+    const diff = TARGET - Date.now();
+    if (diff <= 0) {
+      ['days','hours','mins','secs'].forEach(k => { document.getElementById('cd-' + k).textContent = '00'; });
+      return;
+    }
+    document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // ─── FLOATING CTA ────────────────────────────────────────────────────
+  const floatingCta     = document.getElementById('floating-cta');
+  const heroCtaGroup    = document.getElementById('hero-cta-group');
+  const registerSection = document.getElementById('register');
+  const obs = new IntersectionObserver(entries => {
+    const heroVisible = entries.find(e => e.target === heroCtaGroup)?.isIntersecting;
+    const regVisible  = entries.find(e => e.target === registerSection)?.isIntersecting;
+    floatingCta.classList.toggle('visible', !heroVisible && !regVisible);
+  }, { threshold: 0.1 });
+  obs.observe(heroCtaGroup);
+  obs.observe(registerSection);
+
+  // ─── FORM SUBMISSION ────────────────────────────────────────────────
+  // Update this URL to match your deployed Next.js app domain
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = COPY[currentLang].submitBtnLoading;
+
+    const payload = {
+      name:             document.getElementById('f-name').value.trim(),
+      email:            document.getElementById('f-email').value.trim(),
+      role:             document.getElementById('f-role').value,
+      notifyEnglish:    document.getElementById('notify-english').checked,
+      notifyOtherDates: document.getElementById('notify-other-dates').checked,
+      lang:             currentLang,
+    };
+
+    const errEl = document.getElementById('submit-error');
+    errEl.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`Server error ${res.status}`);
+      showSuccess();
+    } catch (err) {
+      console.error('Registration error:', err);
+      btn.disabled = false;
+      btn.textContent = COPY[currentLang].submitBtn;
+      errEl.style.display = 'block';
+      errEl.textContent = currentLang === 'he'
+        ? 'אירעה שגיאה. אנא נסה שוב או פנה אלינו בדוא"ל.'
+        : 'Something went wrong. Please try again or contact us by email.';
+    }
+  }
+
+  function showSuccess() {
+    document.getElementById('form-container').style.display = 'none';
+    const s = document.getElementById('success-state');
+    s.style.display = 'block';
+    document.getElementById('success-title').textContent = COPY[currentLang].successTitle;
+    document.getElementById('success-desc').innerHTML    = COPY[currentLang].successDesc;
+  }
+
+  // ─── ADD TO CALENDAR ────────────────────────────────────────────────
+  function openCalendar(e) {
+    e.preventDefault();
+    const c = COPY[currentLang];
+    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text='     + encodeURIComponent(c.calTitle)
+      + '&dates=20260618T150000Z/20260618T160000Z'
+      + '&details='  + encodeURIComponent(c.calDetails)
+      + '&location=' + encodeURIComponent('https://7dimentionswebinar.paretix.com');
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  // ─── INIT ────────────────────────────────────────────────────────────
+  applyLang('he');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use | Paretix Academy Webinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a192f; --navy-dark: #061220; --navy-light: #0d2137;
+      --gold: #c5a059; --gold-dark: #a8863c;
+      --text: #ccd6f6; --muted: #8892a4; --white: #ffffff;
+      --card-bg: rgba(13,33,55,0.6); --card-border: rgba(197,160,89,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy); color: var(--text);
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; line-height: 1.7;
+    }
+    ::selection { background: rgba(197,160,89,0.25); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6,18,32,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(197,160,89,0.12); height: 96px;
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; height: 100%;
+      padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    nav img.logo { height: 80px; width: auto; display: block; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--gold); font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.8; }
+
+    /* HEADER */
+    .page-header {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(197,160,89,0.1);
+      padding: 3.5rem 1.5rem 3rem;
+    }
+    .page-header-inner { max-width: 800px; margin: 0 auto; }
+    .page-tag {
+      font-size: 0.75rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .divider-gold {
+      width: 52px; height: 3px; border-radius: 2px; margin-bottom: 1.25rem;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    h1.page-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800;
+      color: var(--white); line-height: 1.2; margin-bottom: 0.5rem;
+    }
+    .page-updated { font-size: 0.8125rem; color: var(--muted); }
+
+    /* CONTENT */
+    .content-wrap { max-width: 800px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+    h2 {
+      font-size: 1.125rem; font-weight: 700; color: var(--white);
+      margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(197,160,89,0.15);
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { color: var(--text); margin-bottom: 1rem; font-size: 0.9375rem; }
+
+    ul, ol { padding-inline-start: 1.5rem; margin-bottom: 1rem; }
+    li { color: var(--text); font-size: 0.9375rem; margin-bottom: 0.4rem; }
+
+    strong { color: var(--white); font-weight: 600; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: rgba(197,160,89,0.07); border: 1px solid rgba(197,160,89,0.2);
+      border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem;
+      font-size: 0.9375rem; color: var(--text);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark); border-top: 1px solid rgba(197,160,89,0.1);
+      padding: 1.75rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8125rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8125rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://academy.paretix.com" target="_blank" rel="noopener">
+      <img class="logo" src="https://paretix-ai-assessment.vercel.app/images/logo.png" alt="Paretix Academy" />
+    </a>
+    <a class="nav-back" href="/">
+      ← Back to Webinar
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-tag">Legal</p>
+    <div class="divider-gold"></div>
+    <h1 class="page-title">Terms of Use</h1>
+    <p class="page-updated">Last Updated: June 2026</p>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>Welcome to the <strong>7 AI Dimensions Free Webinar</strong>, hosted by PARETIX Ltd. ("Company", "we", "us", or "our"), headquartered at 31 Yavne Street, Tel-Aviv, Israel.</p>
+  <p>These Terms of Use govern your registration for and participation in the webinar hosted at <a href="https://7dimentionswebinar.paretix.com">7dimentionswebinar.paretix.com</a>. By completing the registration form, you confirm that you have read, understood, and agree to be bound by these Terms.</p>
+
+  <h2>2. The Webinar</h2>
+  <div class="highlight-box">
+    <strong>Event:</strong> 7 AI Dimensions Every Analyst and Manager Must Master<br/>
+    <strong>Date:</strong> Wednesday, June 18, 2026<br/>
+    <strong>Time:</strong> 18:00 GMT+3<br/>
+    <strong>Duration:</strong> 60 minutes (including live Q&amp;A)<br/>
+    <strong>Language:</strong> Hebrew<br/>
+    <strong>Format:</strong> Live online stream<br/>
+    <strong>Cost:</strong> Free
+  </div>
+  <p>PARETIX Ltd. reserves the right to reschedule, cancel, or modify the format of the webinar with reasonable prior notice. If the webinar is canceled before it takes place, registered participants will be notified by email.</p>
+
+  <h2>3. Registration</h2>
+  <p>Registration is free and open to any working professional. By registering you provide accurate information including your name and a valid email address. Your access link will be sent to the email address you provide. We are not responsible for failed delivery due to an incorrect email address or spam filtering.</p>
+  <p>Spots may be limited. Registration does not guarantee attendance if the webinar platform has a capacity limit; in that case, priority is given to earlier registrants.</p>
+
+  <h2>4. Participant Conduct</h2>
+  <p>By participating in the webinar, you agree to:</p>
+  <ul>
+    <li>Conduct yourself professionally in all chat, Q&amp;A, and interactive features.</li>
+    <li>Not share your access link publicly or with third parties not registered for the event.</li>
+    <li>Not disrupt the session, spam the chat, or engage in harassing, offensive, or illegal behavior.</li>
+    <li>Comply with any moderator instructions during the session.</li>
+  </ul>
+  <p>Participants who violate these conduct rules may be removed from the session without notice.</p>
+
+  <h2>5. Recording Policy</h2>
+  <p>PARETIX Ltd. may record the webinar for internal use, future participants, or promotional purposes. By attending you consent to being included in any such recording in a passive capacity (as a member of the live audience). We will not broadcast participant names, video feeds, or audio without separate consent.</p>
+  <p><strong>You may not record the webinar yourself</strong> (screen capture, audio recording, or any other method) without prior written permission from PARETIX Ltd.</p>
+
+  <h2>6. Intellectual Property</h2>
+  <p>All content presented during the webinar, including slides, spoken content, frameworks, visuals, and the Paretix Academy brand, is the exclusive property of PARETIX Ltd. You may not:</p>
+  <ul>
+    <li>Reproduce, republish, or redistribute any webinar content in any form without written permission.</li>
+    <li>Use webinar content for commercial purposes.</li>
+    <li>Share screen recordings or transcripts of the webinar publicly.</li>
+  </ul>
+  <p>Personal notes taken during the webinar remain your own and may be used freely.</p>
+
+  <h2>7. No Warranties</h2>
+  <p>The webinar is provided free of charge and on an "as-is" basis. While we take reasonable steps to ensure a high-quality session, we do not warrant that the webinar will be uninterrupted, error-free, or free from technical issues.</p>
+
+  <h2>8. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by applicable law, PARETIX Ltd. shall not be liable for any direct, indirect, incidental, or consequential damages arising from your participation in or inability to attend the webinar, including but not limited to damages arising from technical failures, scheduling changes, or reliance on information presented.</p>
+
+  <h2>9. Privacy</h2>
+  <p>Your registration data is handled in accordance with our <a href="./privacy.html">Privacy Policy</a>. In summary: we use your name and email to send you the access link and confirmation; we only contact you further if you opted into notifications.</p>
+
+  <h2>10. Modifications to These Terms</h2>
+  <p>We reserve the right to update these Terms. For webinar registrations already submitted, we will notify you by email of any material change before the webinar date. The "Last Updated" date at the top of this page reflects the most recent revision.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These Terms shall be governed by the laws of the State of Israel. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Tel Aviv-Yafo.</p>
+
+  <h2>12. Contact</h2>
+  <p>
+    <strong>PARETIX Ltd.</strong><br/>
+    31 Yavne Street, Tel-Aviv, Israel<br/>
+    General enquiries: <a href="mailto:support@paretix.com">support@paretix.com</a>
+  </p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">Paretix Academy © 2026</span>
+    <div class="footer-links">
+      <a href="/">Webinar Registration</a>
+      <a href="./privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

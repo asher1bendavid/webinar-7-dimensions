@@ -1,0 +1,16 @@
+{
+  "name": "webinar-7-dimensions",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.106.2",
+    "resend": "^6.12.4"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.1.0",
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3"
+  }
+}

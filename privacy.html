@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Paretix Academy Webinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a192f; --navy-dark: #061220; --navy-light: #0d2137;
+      --gold: #c5a059; --gold-dark: #a8863c;
+      --text: #ccd6f6; --muted: #8892a4; --white: #ffffff;
+      --card-bg: rgba(13,33,55,0.6); --card-border: rgba(197,160,89,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy); color: var(--text);
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; line-height: 1.7;
+    }
+    ::selection { background: rgba(197,160,89,0.25); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6,18,32,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(197,160,89,0.12); height: 96px;
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; height: 100%;
+      padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    nav img.logo { height: 80px; width: auto; display: block; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--gold); font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.8; }
+
+    /* HEADER */
+    .page-header {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(197,160,89,0.1);
+      padding: 3.5rem 1.5rem 3rem;
+    }
+    .page-header-inner { max-width: 800px; margin: 0 auto; }
+    .page-tag {
+      font-size: 0.75rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .divider-gold {
+      width: 52px; height: 3px; border-radius: 2px; margin-bottom: 1.25rem;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    h1.page-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800;
+      color: var(--white); line-height: 1.2; margin-bottom: 0.5rem;
+    }
+    .page-updated { font-size: 0.8125rem; color: var(--muted); }
+
+    /* CONTENT */
+    .content-wrap { max-width: 800px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+    h2 {
+      font-size: 1.125rem; font-weight: 700; color: var(--white);
+      margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(197,160,89,0.15);
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { color: var(--text); margin-bottom: 1rem; font-size: 0.9375rem; }
+
+    ul, ol {
+      padding-inline-start: 1.5rem; margin-bottom: 1rem;
+    }
+    li { color: var(--text); font-size: 0.9375rem; margin-bottom: 0.4rem; }
+
+    strong { color: var(--white); font-weight: 600; }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; border-radius: 10px; }
+    table {
+      width: 100%; border-collapse: collapse;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 10px; overflow: hidden; font-size: 0.875rem;
+    }
+    th {
+      text-align: left; padding: 0.75rem 1rem;
+      background: rgba(197,160,89,0.08); color: var(--gold);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      border-bottom: 1px solid var(--card-border);
+    }
+    td { padding: 0.75rem 1rem; color: var(--text); border-bottom: 1px solid rgba(197,160,89,0.07); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(197,160,89,0.04); }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark); border-top: 1px solid rgba(197,160,89,0.1);
+      padding: 1.75rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8125rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8125rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://academy.paretix.com" target="_blank" rel="noopener">
+      <img class="logo" src="https://paretix-ai-assessment.vercel.app/images/logo.png" alt="Paretix Academy" />
+    </a>
+    <a class="nav-back" href="/">
+      ← Back to Webinar
+    </a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-tag">Legal</p>
+    <div class="divider-gold"></div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-updated">Last Updated: June 2026</p>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <h2>1. Introduction</h2>
+  <p>PARETIX Ltd. ("Company", "we", or "us"), headquartered at 31 Yavne Street, Tel-Aviv, Israel, operates the <strong>7 AI Dimensions Free Webinar</strong> registration page at <a href="https://7dimentionswebinar.paretix.com">7dimentionswebinar.paretix.com</a>. This Privacy Policy explains what personal data we collect when you register for the webinar, why we collect it, how we use it, and your rights.</p>
+  <p>We comply with the Israeli Privacy Protection Law (1981), GDPR principles, and other applicable global data protection regulations. By submitting your registration you agree to the practices described herein.</p>
+
+  <h2>2. Data We Collect</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Full name</strong></td><td>Provided during webinar registration. Used to address you in communications and confirm your registration.</td></tr>
+        <tr><td><strong>Email address</strong></td><td>Provided during registration. Used to send your webinar access link, confirmation email, and (if you opted in) future event notifications.</td></tr>
+        <tr><td><strong>Job role</strong></td><td>Optional. Provided during registration. Used to understand the audience and tailor follow-up communications.</td></tr>
+        <tr><td><strong>Notification preferences</strong></td><td>Optional checkboxes indicating whether you want to be notified about future dates or an English-language version of the webinar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>We do not collect payment information, as the webinar is free. We do not use advertising trackers or third-party analytics cookies on this page.</p>
+
+  <h2>3. How We Use Your Data</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Purpose</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Send your access link</strong></td><td>We email you the live stream link before the webinar. This is a transactional email and does not require separate marketing consent.</td></tr>
+        <tr><td><strong>Confirm your registration</strong></td><td>We send a confirmation email immediately after you register.</td></tr>
+        <tr><td><strong>Future event notifications</strong></td><td>Only if you checked the relevant notification box. We may email you when additional webinar dates or an English-language session is scheduled.</td></tr>
+        <tr><td><strong>Improve our webinars</strong></td><td>Aggregate, anonymized registration data (e.g., number of registrants, role distribution) helps us plan future sessions.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4. Data Sharing</h2>
+  <p>We do not sell your personal data. We share it only with the following sub-processors:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sub-processor</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Resend</strong></td><td>Transactional email delivery. Your email address is shared with Resend to deliver your registration confirmation and access link.</td></tr>
+        <tr><td><strong>Vercel</strong></td><td>Application hosting. The registration form runs on Vercel infrastructure. No personal data is persistently stored by Vercel beyond standard web server logs.</td></tr>
+        <tr><td><strong>Supabase</strong> (if applicable)</td><td>If registration data is persisted to a database, it is stored in Supabase-hosted PostgreSQL, encrypted at rest and in transit.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5. Data Retention</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Retention</th></tr></thead>
+      <tbody>
+        <tr><td>Registration data (name, email, role)</td><td>Retained for up to 12 months after the webinar date, then deleted unless you have ongoing communication preferences with us.</td></tr>
+        <tr><td>Notification preferences</td><td>Retained until you withdraw consent or we have fulfilled the notification (e.g., notified you of a new date).</td></tr>
+        <tr><td>Email communication logs</td><td>Retained for up to 12 months for compliance and support purposes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6. Your Rights</h2>
+  <p>Under the Israeli Privacy Protection Law and GDPR, you have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> — request a copy of the personal data we hold about you.</li>
+    <li><strong>Correction</strong> — request that inaccurate data be corrected.</li>
+    <li><strong>Deletion</strong> — request that your registration data be deleted. This will cancel your webinar registration.</li>
+    <li><strong>Withdraw consent</strong> — withdraw notification consent at any time by replying to any email we sent you or contacting us directly.</li>
+    <li><strong>Portability</strong> — request your data in a structured, machine-readable format.</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:support@paretix.com">support@paretix.com</a>. We will respond within 30 days.</p>
+
+  <h2>7. Security</h2>
+  <p>All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Access to personal data is restricted to authorized personnel only.</p>
+
+  <h2>8. Children</h2>
+  <p>This webinar is intended for working professionals and is not directed at individuals under the age of 18. We do not knowingly collect data from minors.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this policy. Material changes will be noted on this page with an updated "Last Updated" date. For a webinar registration already submitted, we will notify you by email of any material change before the webinar date.</p>
+
+  <h2>10. Contact</h2>
+  <p>
+    <strong>PARETIX Ltd.</strong><br/>
+    31 Yavne Street, Tel-Aviv, Israel<br/>
+    Privacy enquiries: <a href="mailto:support@paretix.com">support@paretix.com</a>
+  </p>
+  <p>Governing law: State of Israel. Disputes subject to the exclusive jurisdiction of the competent courts of Tel Aviv-Yafo.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">Paretix Academy © 2026</span>
+    <div class="footer-links">
+      <a href="/">Webinar Registration</a>
+      <a href="./terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

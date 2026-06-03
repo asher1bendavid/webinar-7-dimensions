@@ -1,11 +1,7 @@
 {
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms",   "destination": "/terms.html"   }
-  ],
-  "functions": {
-    "api/register.ts": {
-      "includeFiles": "public/webinar-guide.pdf"
-    }
-  }
+  ]
 }

@@ -896,7 +896,7 @@
     txt('label-role', c.labelRole);
     const sel = document.getElementById('f-role');
     if (sel) Array.from(sel.options).forEach((opt, i) => { if (c.roleOptions[i]) opt.text = c.roleOptions[i]; });
-    document.getElementById('f-name').placeholder = c.placeholder.name;
+    // f-name was split into f-firstname / f-lastname (placeholders set above)
     const btn = document.getElementById('submit-btn');
     if (btn && !btn.disabled) btn.textContent = c.submitBtn;
     txt('form-note', c.formNote);

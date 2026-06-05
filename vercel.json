@@ -2,6 +2,7 @@
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms",   "destination": "/terms.html"   }
+    { "source": "/terms",   "destination": "/terms.html"   },
+    { "source": "/admin",   "destination": "/admin.html"   }
   ]
 }

@@ -276,9 +276,10 @@ function buildEmail(name: string, isRTL: boolean): string {
 
 export async function sendConfirmation(
   email: string,
-  name: string,
+  firstName: string,
   lang: 'he' | 'en'
 ): Promise<void> {
+  const name = firstName
   const resend = new Resend(RESEND_API_KEY)
   const isRTL  = lang === 'he'
 

@@ -314,6 +314,18 @@
     .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
     .form-note { text-align: center; font-size: 0.775rem; color: var(--muted); margin-top: 1rem; line-height: 1.5; }
 
+    /* ─── FIELD VALIDATION ─── */
+    .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 480px) { .name-row { grid-template-columns: 1fr; } }
+    .field-error { font-size: 0.775rem; color: #ff6b6b; margin-top: 0.35rem; display: none; }
+    .field-error.visible { display: block; }
+    .error-names { font-size: 0.775rem; color: #ff6b6b; margin-top: 0.35rem; margin-bottom: 0.35rem; display: none; }
+    .error-names.visible { display: block; }
+    input.invalid, select.invalid {
+      border-color: rgba(239,68,68,0.6) !important;
+      box-shadow: 0 0 0 2px rgba(239,68,68,0.1) !important;
+    }
+
     .success-state { display: none; text-align: center; padding: 1.5rem 0; }
     .success-icon {
       width: 64px; height: 64px; background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.4);
@@ -585,19 +597,35 @@
           </div>
         </div>
 
-        <!-- Replace action with real endpoint: POST { name, email, role, notifyEnglish, lang } -->
-        <form id="register-form" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <label for="f-name" id="label-name">שם מלא</label>
-            <input type="text" id="f-name" name="name" required placeholder="ישראל ישראלי" />
+        <form id="register-form" onsubmit="handleSubmit(event)" novalidate>
+
+          <!-- First + Last name in a side-by-side row -->
+          <div class="name-row form-row">
+            <div>
+              <label for="f-firstname" id="label-firstname">שם פרטי</label>
+              <input type="text" id="f-firstname" name="firstname"
+                     autocomplete="given-name" placeholder="ישראל" />
+              <div class="field-error" id="error-firstname"></div>
+            </div>
+            <div>
+              <label for="f-lastname" id="label-lastname">שם משפחה</label>
+              <input type="text" id="f-lastname" name="lastname"
+                     autocomplete="family-name" placeholder="ישראלי" />
+              <div class="field-error" id="error-lastname"></div>
+            </div>
           </div>
+          <div class="error-names" id="error-names"></div>
+
           <div class="form-row">
             <label for="f-email" id="label-email">אימייל</label>
-            <input type="email" id="f-email" name="email" required placeholder="you@company.com" />
+            <input type="email" id="f-email" name="email"
+                   autocomplete="email" dir="ltr" placeholder="you@company.com" />
+            <div class="field-error" id="error-email"></div>
           </div>
+
           <div class="form-row">
             <label for="f-role" id="label-role">תפקיד (אופציונלי)</label>
-            <select id="f-role" name="role">
+            <select id="f-role" name="role" autocomplete="organization-title">
               <option value="">בחר תפקיד...</option>
               <option value="analyst">אנליסט / דאטה</option>
               <option value="manager">מנהל / Team Lead</option>
@@ -606,11 +634,12 @@
               <option value="other">אחר</option>
             </select>
           </div>
+
           <button type="submit" class="btn-submit" id="submit-btn">הרשם לוובינר חינם ←</button>
-        <div id="submit-error" style="display:none;margin-top:0.75rem;padding:0.7rem 1rem;
-             background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
-             border-radius:8px;font-size:0.85rem;color:#fca5a5;text-align:center;line-height:1.5;">
-        </div>
+          <div id="submit-error" style="display:none;margin-top:0.75rem;padding:0.7rem 1rem;
+               background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
+               border-radius:8px;font-size:0.85rem;color:#fca5a5;text-align:center;line-height:1.5;">
+          </div>
         </form>
         <p class="form-note" id="form-note">ה-AI לא יחכה. 2 דקות עכשיו = ידע שישרת אותך שנים. לא שולחים ספאם.</p>
       </div>
@@ -698,7 +727,16 @@
       secLabelReg: 'הרשמה לוובינר', secTitleReg: 'הבטח את מקומך, חינם',
       regCardTitle: '18 יוני 2026 · 18:00 GMT+3',
       regCardSub: 'מלא את הפרטים ונשלח לך את קישור הכניסה לשידור החי לפני הוובינר.',
-      labelName: 'שם מלא', labelEmail: 'אימייל', labelRole: 'תפקיד (אופציונלי)',
+      labelFirstName: 'שם פרטי', labelLastName: 'שם משפחה',
+      placeholderFirstName: 'ישראל', placeholderLastName: 'ישראלי',
+      labelEmail: 'אימייל', labelRole: 'תפקיד (אופציונלי)',
+      errors: {
+        required:      'שדה חובה',
+        invalidChars:  'אותיות בלבד (עברית/לטינית), מקף וגרש',
+        mixedScripts:  'לא ניתן לשלב אותיות עבריות ולטיניות',
+        scriptMismatch:'שם פרטי ושם משפחה חייבים להיות באותה שפה',
+        invalidEmail:  'כתובת אימייל לא תקינה',
+      },
       roleOptions: ['בחר תפקיד...','אנליסט / דאטה','מנהל / Team Lead','L&D / הדרכה','מנהל בכיר / C-Level','אחר'],
       submitBtn: 'הרשם לוובינר חינם ←', submitBtnLoading: 'שולח...',
       formNote: 'ה-AI לא יחכה. 2 דקות עכשיו = ידע שישרת אותך שנים. לא שולחים ספאם.',
@@ -753,7 +791,16 @@
       secLabelReg: 'WEBINAR REGISTRATION', secTitleReg: 'Secure Your Free Spot',
       regCardTitle: 'June 18, 2026 · 18:00 GMT+3',
       regCardSub: 'Fill in your details and we\'ll send you the live stream link before the webinar.',
-      labelName: 'Full Name', labelEmail: 'Email Address', labelRole: 'Job Role (optional)',
+      labelFirstName: 'First Name', labelLastName: 'Last Name',
+      placeholderFirstName: 'Jane', placeholderLastName: 'Smith',
+      labelEmail: 'Email Address', labelRole: 'Job Role (optional)',
+      errors: {
+        required:      'This field is required',
+        invalidChars:  'Letters only (Latin/Hebrew), hyphens and apostrophes',
+        mixedScripts:  'Cannot mix Latin and Hebrew characters',
+        scriptMismatch:'First and last name must use the same language',
+        invalidEmail:  'Please enter a valid email address',
+      },
       roleOptions: ['Select your role...','Analyst / Data','Manager / Team Lead','L&D / Training','Senior Executive / C-Level','Other'],
       submitBtn: 'Register for Free Webinar →', submitBtnLoading: 'Sending...',
       formNote: 'AI won\'t wait. 2 minutes now = knowledge that serves you for years. No spam, ever.',
@@ -841,12 +888,15 @@
     txt('sec-title-reg', c.secTitleReg);
     txt('reg-card-title', c.regCardTitle);
     txt('reg-card-sub', c.regCardSub);
-    txt('label-name', c.labelName);
+    txt('label-firstname', c.labelFirstName);
+    txt('label-lastname', c.labelLastName);
+    document.getElementById('f-firstname').placeholder = c.placeholderFirstName;
+    document.getElementById('f-lastname').placeholder  = c.placeholderLastName;
     txt('label-email', c.labelEmail);
     txt('label-role', c.labelRole);
     const sel = document.getElementById('f-role');
     if (sel) Array.from(sel.options).forEach((opt, i) => { if (c.roleOptions[i]) opt.text = c.roleOptions[i]; });
-    document.getElementById('f-name').placeholder = c.placeholder.name;
+    // f-name was split into f-firstname / f-lastname (placeholders set above)
     const btn = document.getElementById('submit-btn');
     if (btn && !btn.disabled) btn.textContent = c.submitBtn;
     txt('form-note', c.formNote);
@@ -915,16 +965,92 @@
   obs.observe(heroCtaGroup);
   obs.observe(registerSection);
 
-  // ─── FORM SUBMISSION ────────────────────────────────────────────────
-  // Update this URL to match your deployed Next.js app domain
+  // ─── VALIDATION ──────────────────────────────────────────────────────
+  const NAME_PATTERN = /^[a-zA-Zא-תװ-״\s\-'’]+$/;
+
+  function getScript(text) {
+    const hasL = /[a-zA-Z]/.test(text);
+    const hasH = /[א-״]/.test(text);
+    if (hasL && hasH) return 'mixed';
+    if (hasL) return 'latin';
+    if (hasH) return 'hebrew';
+    return 'unknown';
+  }
+
+  function showFieldError(id, msg) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = msg || '';
+    el.classList.toggle('visible', !!msg);
+  }
+
+  function setInvalid(id, isInvalid) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('invalid', isInvalid);
+  }
+
+  function clearAllErrors() {
+    ['f-firstname','f-lastname','f-email'].forEach(id => setInvalid(id, false));
+    ['error-firstname','error-lastname','error-names','error-email'].forEach(id => showFieldError(id, ''));
+    const sub = document.getElementById('submit-error');
+    if (sub) sub.style.display = 'none';
+  }
+
+  function validateForm() {
+    clearAllErrors();
+    const E   = COPY[currentLang].errors;
+    let valid = true;
+
+    const firstName = document.getElementById('f-firstname').value.trim();
+    const lastName  = document.getElementById('f-lastname').value.trim();
+    const email     = document.getElementById('f-email').value.trim();
+
+    if (!firstName) {
+      showFieldError('error-firstname', E.required); setInvalid('f-firstname', true); valid = false;
+    } else if (!NAME_PATTERN.test(firstName)) {
+      showFieldError('error-firstname', E.invalidChars); setInvalid('f-firstname', true); valid = false;
+    } else if (getScript(firstName) === 'mixed') {
+      showFieldError('error-firstname', E.mixedScripts); setInvalid('f-firstname', true); valid = false;
+    }
+
+    if (!lastName) {
+      showFieldError('error-lastname', E.required); setInvalid('f-lastname', true); valid = false;
+    } else if (!NAME_PATTERN.test(lastName)) {
+      showFieldError('error-lastname', E.invalidChars); setInvalid('f-lastname', true); valid = false;
+    } else if (getScript(lastName) === 'mixed') {
+      showFieldError('error-lastname', E.mixedScripts); setInvalid('f-lastname', true); valid = false;
+    }
+
+    if (firstName && lastName) {
+      const fs = getScript(firstName), ls = getScript(lastName);
+      if (fs !== ls && fs !== 'unknown' && ls !== 'unknown') {
+        showFieldError('error-names', E.scriptMismatch);
+        setInvalid('f-firstname', true); setInvalid('f-lastname', true);
+        valid = false;
+      }
+    }
+
+    if (!email) {
+      showFieldError('error-email', E.required); setInvalid('f-email', true); valid = false;
+    } else if (!/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+      showFieldError('error-email', E.invalidEmail); setInvalid('f-email', true); valid = false;
+    }
+
+    return valid;
+  }
+
+  // ─── FORM SUBMISSION ─────────────────────────────────────────────────
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!validateForm()) return;
+
     const btn = document.getElementById('submit-btn');
     btn.disabled = true;
     btn.textContent = COPY[currentLang].submitBtnLoading;
 
     const payload = {
-      name:             document.getElementById('f-name').value.trim(),
+      firstName:        document.getElementById('f-firstname').value.trim(),
+      lastName:         document.getElementById('f-lastname').value.trim(),
       email:            document.getElementById('f-email').value.trim(),
       role:             document.getElementById('f-role').value,
       notifyEnglish:    document.getElementById('notify-english').checked,
@@ -933,8 +1059,6 @@
     };
 
     const errEl = document.getElementById('submit-error');
-    errEl.style.display = 'none';
-
     try {
       const res = await fetch('/api/register', {
         method: 'POST',

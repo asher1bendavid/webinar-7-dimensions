@@ -158,7 +158,7 @@ function buildEmail(name: string, isRTL: boolean): string {
       <tr>
         <td style="padding:14px 18px;" dir="${dir}">
           <p style="margin:0 0 6px;font-family:${font};font-size:14px;color:#ccd6f6;">
-            📅&nbsp; ${isRTL ? 'יום רביעי, 18 יוני 2026' : 'Wednesday, June 18, 2026'}
+            📅&nbsp; ${isRTL ? 'יום חמישי, 18 יוני 2026' : 'Thursday, June 18, 2026'}
           </p>
           <p style="margin:0 0 6px;font-family:${font};font-size:14px;color:#ccd6f6;">
             🕕&nbsp; 18:00 GMT+3 &nbsp;·&nbsp; ${isRTL ? '60 דקות' : '60 Minutes'}
